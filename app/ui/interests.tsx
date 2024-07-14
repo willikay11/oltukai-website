@@ -83,6 +83,7 @@ const interests = [
 export default function Interests() {
   let scrollBy = 500;
   const ref = useRef<any>();
+  const [scrolled, setScrolled] = useState<boolean>(false);
   const [showPrevBtn, setShowPrevBtn] = useState<boolean>(false);
   const [showNextBtn, setShowNextBtn] = useState<boolean>(true);
 
@@ -116,6 +117,7 @@ export default function Interests() {
         if (ref.current?.scrollLeft === 0) {
           setShowPrevBtn(false);
           setShowNextBtn(true);
+          setScrolled(false);
         }
       });
     }
@@ -124,7 +126,7 @@ export default function Interests() {
   return (
     <div className="bg-white py-16 w-full">
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-start-3 col-span-10 overflow-hidden">
+        <div className="col-start-3 col-span-10">
           <div className="inline-flex w-full mb-3 justify-between pr-4">
             <p className="text-3xl font-bold text-gray-800">Discover</p>
             <div className="inline-flex">
@@ -155,6 +157,7 @@ export default function Interests() {
               <button
                 onClick={(event) => {
                   event.stopPropagation();
+                  // setScrolled(true);
                   ref.current?.scrollTo({
                     left: ref.current?.scrollLeft + scrollBy,
                   });
@@ -178,28 +181,32 @@ export default function Interests() {
             </div>
           </div>
         </div>
-        <div ref={ref} className="col-span-12 overflow-hidden scroll-smooth">
-          <div className="inline-flex items-center">
-            {/*<div className="w-[15.938rem] h-[80] bg-white" />*/}
-            {interests.map((interest, index) => (
-              <div
-                key={interest.title}
-                style={{ width: 220, height: 80 }}
-                className="flex flex-col items-center justify-center mr-2 relative"
-              >
-                <Image
-                  src={interest.image}
-                  alt={interest.title}
-                  fill
-                  sizes="100vw"
-                  style={{
-                    objectFit: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
-                <p className="text-white text-16 z-10">{interest.title}</p>
+        <div ref={ref} className={clsx('col-span-12 overflow-hidden scroll-smooth')}>
+          <div className="grid grid-cols-12 gap-1">
+            <div className="col-start-1 col-span-2" />
+            <div className="col-start-3 col-span-10">
+              <div className="inline-flex items-center">
+                {interests.map((interest, index) => (
+                    <div
+                        key={interest.title}
+                        style={{ width: 220, height: 80 }}
+                        className="flex flex-col items-center justify-center mr-2 relative"
+                    >
+                      <Image
+                          src={interest.image}
+                          alt={interest.title}
+                          fill
+                          sizes="100vw"
+                          style={{
+                            objectFit: "cover",
+                            backgroundPosition: "center",
+                          }}
+                      />
+                      <p className="text-white text-16 z-10">{interest.title}</p>
+                    </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
