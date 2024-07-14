@@ -11,7 +11,7 @@ export default function Footer() {
             <p className="text-16 font-normal text-gray-700 mb-2">
               Get notified when we launch.
             </p>
-            <div className="inline-flex mb-3">
+            <div className="inline-flex mb-3 2xl:w-96">
               <EmailRegistration border />
             </div>
             <p className="text-16 font-normal text-gray-700 mb-3">
