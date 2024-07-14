@@ -12,7 +12,7 @@ export function EmailRegistration({border}: { border: boolean }) {
     const validateEmail = (email: string) => {
         const regex = /\S+@\S+\.\S+/;
         if (regex.test(email)) {
-            setError(null)
+            setError(undefined)
         } else {
             setError('Email not valid.')
         }
