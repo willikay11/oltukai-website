@@ -2,9 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import {
   ArrowLeft01Icon,
   ArrowRight01Icon,
@@ -183,7 +180,7 @@ export default function Interests() {
         </div>
         <div ref={ref} className="col-span-12 overflow-hidden scroll-smooth">
           <div className="inline-flex items-center">
-            <div className="w-[15.938rem] h-[80] bg-white" />
+            {/*<div className="w-[15.938rem] h-[80] bg-white" />*/}
             {interests.map((interest, index) => (
               <div
                 key={interest.title}

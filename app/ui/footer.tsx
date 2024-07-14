@@ -1,5 +1,6 @@
 import { Mail02Icon } from "@hugeicons/react-pro";
 import Image from "next/image";
+import {EmailRegistration} from "@/app/ui/components/emailRegistration";
 
 export default function Footer() {
   return (
@@ -11,16 +12,7 @@ export default function Footer() {
               Get notified when we launch.
             </p>
             <div className="inline-flex mb-3">
-              <div className="inline-flex rounded-[5px] border-[1px] border-gray-200 bg-white items-center h-12 w-80 px-4 mr-2">
-                <Mail02Icon className="text-gray-800 mr-2" size={16} />
-                <input
-                  placeholder="Enter Email Address"
-                  className="text-xs outline-0"
-                />
-              </div>
-              <button className="text-xs text-white bg-primary rounded-[5px] px-8">
-                Submit
-              </button>
+              <EmailRegistration border />
             </div>
             <p className="text-16 font-normal text-gray-700 mb-3">
               Oltukai is coming soon to all platforms.

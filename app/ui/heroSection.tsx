@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { hugeiconsLicense, Mail02Icon } from "@hugeicons/react-pro";
+import { hugeiconsLicense } from "@hugeicons/react-pro";
+import {EmailRegistration} from "@/app/ui/components/emailRegistration";
 
 hugeiconsLicense(
   "890e3333f427f30eb0b744e4d32392a6RT00NzkxODg2MzcwMDAwLFM9cHJvLFY9MSxQPUd1bXJvYWQsU1Q9QjVBMzQ1NzMsRVQ9MDIxMUY0RkM=",
@@ -71,17 +72,8 @@ export default function () {
             <p className="text-16 text-white mb-4">
               Get notified when we launch.
             </p>
-            <div className="inline-flex">
-              <div className="inline-flex rounded-[5px] bg-white items-center h-12 w-64 px-4 mr-4">
-                <Mail02Icon className="text-gray-800 mr-2" size={16} />
-                <input
-                  placeholder="Enter Email Address"
-                  className="text-xs outline-0"
-                />
-              </div>
-              <button className="text-xs text-white bg-primary rounded-[5px] px-8">
-                Submit
-              </button>
+            <div className="w-96">
+              <EmailRegistration border={false} />
             </div>
           </div>
         </div>
