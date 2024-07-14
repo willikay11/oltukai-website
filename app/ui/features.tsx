@@ -98,42 +98,51 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="bg-[#F9FAFB]">
+    <div className="relative">
       <div className="grid grid-cols-12 gap-4 py-16">
-        <div className="col-start-3 col-span-8">
-          <div className="md:w-1/2 mb-6">
-            <p className="text-3xl font-medium text-gray-800 mb-2.5">
-              For only <span className="text-primary">US$1.00</span> a month,
-              you get tour guides, organise experiences and create communities.
-            </p>
+          <div className="col-start-3 col-span-8">
+            <div className="md:w-1/2 mb-6">
+              <p className="text-3xl font-medium text-gray-800 mb-2.5">
+                For only <span className="text-primary">US$1.00</span> a month,
+                you get tour guides, organise experiences and create communities.
+              </p>
 
-            <p className="text=16 text-gray-700">
-              Register as a tour guide and earn by giving people a tour of some
-              of your favorite places. Have an event coming up? Sell your
-              tickets on Oltukai. Have an interest and would like to hang out
-              with like-minded people? Create your community on Oltukai.
-            </p>
-          </div>
-          <div className="grid grid-cols-3 gap-4">
-            {features.map((feature) => (
-              <div key={feature.title} className="flex flex-col mb-4 gap-x-2">
-                <div
-                  className={`flex mb-2 rounded-full h-10 w-10 items-center justify-center ${feature.backgroundIconColor}`}
-                >
-                  {feature.icon}
-                </div>
+              <p className="text=16 text-gray-700">
+                Register as a tour guide and earn by giving people a tour of some
+                of your favorite places. Have an event coming up? Sell your
+                tickets on Oltukai. Have an interest and would like to hang out
+                with like-minded people? Create your community on Oltukai.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              {features.map((feature) => (
+                  <div key={feature.title} className="flex flex-col mb-4 gap-x-2">
+                    <div
+                        className={`flex mb-2 rounded-full h-10 w-10 items-center justify-center ${feature.backgroundIconColor}`}
+                    >
+                      {feature.icon}
+                    </div>
 
-                <div className="flex-col">
-                  <p className="text-gray-800 font-bold text-16 font-medium mb-1">
-                    {feature.title}
-                  </p>
-                  <p className="text-16 text-gray-700 font-normal">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+                    <div className="flex-col">
+                      <p className="text-gray-800 font-bold text-16 font-medium mb-1">
+                        {feature.title}
+                      </p>
+                      <p className="text-16 text-gray-700 font-normal">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+              ))}
+            </div>
           </div>
+        </div>
+      <div className="bg-[#F9FAFB] absolute top-0 bottom-0 left-0 right-0 -z-[1]">
+        <div className="h-full grid grid-cols-6 divide-x divide-dashed divide-gray-200">
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
         </div>
       </div>
     </div>

@@ -124,7 +124,7 @@ export default function Interests() {
   });
 
   return (
-    <div className="bg-white py-16 w-full">
+    <div className="bg-transparent py-16 w-full relative">
       <div className="grid grid-cols-12 gap-4">
         <div className="col-start-3 col-span-10">
           <div className="inline-flex w-full mb-3 justify-between pr-4">
@@ -208,6 +208,15 @@ export default function Interests() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="absolute top-0 bottom-0 left-0 right-0 -z-[10]">
+        <div className="h-full grid grid-cols-6 divide-x divide-dashed divide-gray-200">
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
         </div>
       </div>
     </div>

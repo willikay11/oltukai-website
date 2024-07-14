@@ -9,7 +9,7 @@ hugeiconsLicense(
 
 export default function HeroSection () {
   return (
-    <div>
+    <div className="relative">
       <Image
         src="/background.svg"
         alt="background-image"
@@ -76,6 +76,15 @@ export default function HeroSection () {
               <EmailRegistration border={false} />
             </div>
           </div>
+        </div>
+      </div>
+      <div className="absolute top-0 bottom-0 left-0 right-0 -z-[1]">
+        <div className="h-full grid grid-cols-6 divide-x divide-dashed divide-gray-400">
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
         </div>
       </div>
     </div>
