@@ -1,5 +1,5 @@
 "use client";
-import {useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -22,7 +22,7 @@ const settings = {
   centerMode: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  variableWidth: true
+  variableWidth: true,
 };
 
 const interests = [
@@ -66,10 +66,64 @@ const interests = [
     image: "/night-life.svg",
     title: "Sunset",
   },
+  {
+    image: "/running.svg",
+    title: "Biking",
+  },
+  {
+    image: "/offroad-driving.svg",
+    title: "Walking",
+  },
+  {
+    image: "/gym.svg",
+    title: "Fishing",
+  },
+  {
+    image: "/night-life.svg",
+    title: "Sunset",
+  },
 ];
 export default function Interests() {
-  let sliderRef = useRef(null);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  let scrollBy = 500;
+  const ref = useRef<any>();
+  const [showPrevBtn, setShowPrevBtn] = useState<boolean>(false);
+  const [showNextBtn, setShowNextBtn] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (ref.current) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      scrollBy = ref?.current?.offsetWidth - 100;
+
+      window.addEventListener("resize", () => {
+        if (ref?.current?.scrollWidth === ref?.current?.offsetWidth) {
+          setShowNextBtn(false);
+        }
+
+        if (ref?.current?.scrollWidth > ref?.current?.offsetWidth) {
+          setShowNextBtn(true);
+        }
+      });
+
+      ref?.current?.addEventListener("scroll", () => {
+        if (
+          ref.current?.offsetWidth + ref.current?.scrollLeft >=
+          ref?.current?.scrollWidth - 5
+        ) {
+          setShowNextBtn(false);
+        }
+
+        if (ref.current?.scrollLeft > 0) {
+          setShowPrevBtn(true);
+        }
+
+        if (ref.current?.scrollLeft === 0) {
+          setShowPrevBtn(false);
+          setShowNextBtn(true);
+        }
+      });
+    }
+  });
+
   return (
     <div className="bg-white py-16 w-full">
       <div className="grid grid-cols-12 gap-4">
@@ -80,82 +134,76 @@ export default function Interests() {
               <button
                 onClick={(event) => {
                   event.stopPropagation();
-                  sliderRef.slickPrev();
+                  ref.current?.scrollTo({
+                    left: ref.current?.scrollLeft - scrollBy,
+                  });
                 }}
-                className="flex items-center justify-center w-8 h-8 rounded-full border-[1px] border-primary mr-2"
+                className={clsx(
+                  "flex items-center justify-center w-8 h-8 rounded-full border-[1px] mr-2",
+                  {
+                    "border-primary": showPrevBtn,
+                    "border-gray-200": !showPrevBtn,
+                  },
+                )}
               >
-                <ArrowLeft01Icon size={22} />
+                <ArrowLeft01Icon
+                  size={22}
+                  className={clsx("", {
+                    "text-primary": showPrevBtn,
+                    "text-gray-200": !showPrevBtn,
+                  })}
+                />
               </button>
 
               <button
                 onClick={(event) => {
                   event.stopPropagation();
-                  sliderRef.slickNext();
-                  if (!scrolled) setScrolled(true);
+                  ref.current?.scrollTo({
+                    left: ref.current?.scrollLeft + scrollBy,
+                  });
                 }}
-                className="flex items-center justify-center w-8 h-8 rounded-full border-[1px] border-primary"
+                className={clsx(
+                  "flex items-center justify-center w-8 h-8 rounded-full border-[1px] mr-2",
+                  {
+                    "border-primary": showNextBtn,
+                    "border-gray-200": !showNextBtn,
+                  },
+                )}
               >
-                <ArrowRight01Icon size={22} />
+                <ArrowRight01Icon
+                  size={22}
+                  className={clsx("", {
+                    "text-primary": showNextBtn,
+                    "text-gray-200": !showNextBtn,
+                  })}
+                />
               </button>
             </div>
           </div>
         </div>
-        <div className={clsx('overflow-hidden col-start-0 col-span-12')}>
-          <div className="slider-container">
-            <Slider
-                ref={(slider) => {
-                  sliderRef = slider;
-                }}
-                {...settings}
-            >
-              {interests.map((interest) => (
-                  <div
-                      key={interest.title}
-                      style={{ width: 220 }}
-                      className="!flex items-center justify-center w-[220px] h-[80px] relative"
-                  >
-                    <Image
-                        src={interest.image}
-                        alt={interest.title}
-                        fill
-                        sizes="100vw"
-                        style={{
-                          objectFit: "cover",
-                          backgroundPosition: "center",
-                          zIndex: -1,
-                        }}
-                    />
-                    <span className="text-white text-16 font-medium">
-                  {interest.title}
-                </span>
-                  </div>
-              ))}
-            </Slider>
+        <div ref={ref} className="col-span-12 overflow-hidden scroll-smooth">
+          <div className="inline-flex items-center">
+            <div className="w-[15.938rem] h-[80] bg-white" />
+            {interests.map((interest, index) => (
+              <div
+                key={interest.title}
+                style={{ width: 220, height: 80 }}
+                className="flex flex-col items-center justify-center mr-2 relative"
+              >
+                <Image
+                  src={interest.image}
+                  alt={interest.title}
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
+                <p className="text-white text-16 z-10">{interest.title}</p>
+              </div>
+            ))}
           </div>
-          {/*<div ref={sliderRef} className="flex items-center overflow-hidden scroll-smooth">*/}
-          {/*  {interests.map((interest) => (*/}
-          {/*      <div*/}
-          {/*          key={interest.title}*/}
-          {/*          style={{ width: 220 }}*/}
-          {/*          className="flex items-center justify-center w-[220px] h-[80px] relative"*/}
-          {/*      >*/}
-          {/*        <Image*/}
-          {/*            src={interest.image}*/}
-          {/*            alt={interest.title}*/}
-          {/*            fill*/}
-          {/*            sizes="100vw"*/}
-          {/*            style={{*/}
-          {/*              objectFit: "cover",*/}
-          {/*              backgroundPosition: "center",*/}
-          {/*              zIndex: -1,*/}
-          {/*            }}*/}
-          {/*        />*/}
-          {/*        <span className="text-16 font-medium">*/}
-          {/*          {interest.title}*/}
-          {/*        </span>*/}
-          {/*      </div>*/}
-          {/*  ))}*/}
-          {/*</div>*/}
         </div>
       </div>
     </div>
