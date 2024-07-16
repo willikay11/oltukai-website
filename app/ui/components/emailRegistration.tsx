@@ -25,7 +25,7 @@ export function EmailRegistration({border}: { border: boolean }) {
                     'border-gray-200 border-[1px]': border,
                     'border-red-500 border-[1px]': error
                 })}>
-                    <Mail02Icon className="text-gray-800 mr-2" size={16} />
+                    <Mail02Icon className="text-gray-800 mr-2" size={16} variant="twotone" />
                     <input
                         placeholder="Enter Email Address"
                         className="text-xs outline-0 w-full"

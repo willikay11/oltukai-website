@@ -126,7 +126,7 @@ export default function Interests() {
   return (
     <div className="bg-transparent py-16 w-full relative">
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-start-3 col-span-10">
+        <div className="col-start-3 col-span-10 2xl:col-start-4 ">
           <div className="inline-flex w-full mb-3 justify-between pr-4">
             <p className="text-3xl font-bold text-gray-800">Discover</p>
             <div className="inline-flex">
@@ -151,6 +151,7 @@ export default function Interests() {
                     "text-primary": showPrevBtn,
                     "text-gray-200": !showPrevBtn,
                   })}
+                  variant="twotone"
                 />
               </button>
 
@@ -176,6 +177,7 @@ export default function Interests() {
                     "text-primary": showNextBtn,
                     "text-gray-200": !showNextBtn,
                   })}
+                  variant="twotone"
                 />
               </button>
             </div>
@@ -184,7 +186,7 @@ export default function Interests() {
         <div ref={ref} className={clsx('col-span-12 overflow-hidden scroll-smooth')}>
           <div className="grid grid-cols-12 gap-1">
             <div className="col-start-1 col-span-2" />
-            <div className="col-start-3 col-span-10">
+            <div className="col-start-3 col-span-10 2xl:col-start-4">
               <div className="inline-flex items-center">
                 {interests.map((interest, index) => (
                     <div
@@ -211,12 +213,12 @@ export default function Interests() {
         </div>
       </div>
       <div className="absolute top-0 bottom-0 left-0 right-0 -z-[10]">
-        <div className="h-full grid grid-cols-6 divide-x divide-dashed divide-gray-200">
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
+        <div className="h-full grid grid-cols-6 2xl:grid-cols-12 2xl:col-start-3 divide-x divide-dashed divide-gray-200">
+          <div className="2xl:col-start-3" />
+          <div className="2xl:col-span-2" />
+          <div className="2xl:col-span-2" />
+          <div className="2xl:col-span-2" />
+          <div className="2xl:col-span-2" />
         </div>
       </div>
     </div>

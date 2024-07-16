@@ -6,7 +6,7 @@ export default function Footer() {
   return (
    <div className="relative">
      <div className="grid grid-cols-12 gap-4 pt-16">
-       <div className="col-start-3 col-span-8">
+       <div className="col-start-3 col-span-8 2xl:col-start-4 2xl:col-span-6">
          <div className="grid grid-cols-2 gap-4">
            <div className="flex flex-col justify-center">
              <p className="text-16 font-normal text-gray-700 mb-2">
@@ -61,13 +61,13 @@ export default function Footer() {
        </div>
      </div>
      <div className="absolute top-0 bottom-0 left-0 right-0 -z-[10]">
-       <div className="h-full grid grid-cols-6 divide-x divide-dashed divide-gray-200">
-         <div />
-         <div />
-         <div />
-         <div />
-         <div />
-       </div>
+         <div className="h-full grid grid-cols-6 2xl:grid-cols-12 2xl:col-start-3 divide-x divide-dashed divide-gray-200">
+             <div className="2xl:col-start-3" />
+             <div className="2xl:col-span-2" />
+             <div className="2xl:col-span-2" />
+             <div className="2xl:col-span-2" />
+             <div className="2xl:col-span-2" />
+         </div>
      </div>
    </div>
   );

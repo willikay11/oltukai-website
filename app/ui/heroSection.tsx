@@ -22,7 +22,7 @@ export default function HeroSection () {
         }}
       />
       <div className="h-screen grid grid-cols-12 gap-4">
-        <div className="col-start-3 col-span-8">
+        <div className="col-start-3 col-span-8 2xl:col-start-4 2xl:col-span-6">
           <div className="flex items-center justify-between h-24">
             <Link href="/">
               <Image
@@ -79,12 +79,12 @@ export default function HeroSection () {
         </div>
       </div>
       <div className="absolute top-0 bottom-0 left-0 right-0 -z-[1]">
-        <div className="h-full grid grid-cols-6 divide-x divide-dashed divide-gray-400">
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
+        <div className="h-full grid grid-cols-6 2xl:grid-cols-12 2xl:col-start-3 divide-x divide-dashed divide-gray-400">
+          <div className="2xl:col-start-3" />
+          <div className="2xl:col-span-2" />
+          <div className="2xl:col-span-2" />
+          <div className="2xl:col-span-2" />
+          <div className="2xl:col-span-2" />
         </div>
       </div>
     </div>
