@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@hugeicons/react-pro": "^0.3.2",
+    "axios": "^1.7.2",
     "clsx": "^2.1.1",
     "next": "14.2.5",
     "react": "^18",
