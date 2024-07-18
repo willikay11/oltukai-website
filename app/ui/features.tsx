@@ -99,7 +99,7 @@ const features = [
 export default function Features() {
   return (
     <div className="relative">
-      <div className="grid grid-cols-12 gap-4 py-16">
+      <div className="grid grid-cols-12 gap-4 py-8 md:py-16">
           <div className="col-start-2 col-span-10 md:col-start-3 md:col-span-8 2xl:col-start-4 2xl:col-span-6">
             <div className="md:w-1/2 mb-6">
               <p className="text-2xl md:text-3xl font-semibold text-gray-700 mb-2.5">
@@ -124,7 +124,7 @@ export default function Features() {
                     </div>
 
                     <div className="flex-col">
-                      <p className="text-gray-800 font-bold text-13 md:text-16 font-semibold mb-1">
+                      <p className="text-gray-700 font-semibold text-13 md:text-16 mb-1">
                         {feature.title}
                       </p>
                       <p className="text-13 md:text-16 text-gray-700 font-normal">

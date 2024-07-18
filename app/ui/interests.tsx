@@ -124,11 +124,11 @@ export default function Interests() {
   });
 
   return (
-    <div className="bg-transparent py-16 w-full relative">
+    <div className="bg-transparent py-8 md:py-16 w-full relative">
       <div className="grid grid-cols-12 gap-4">
         <div className="col-start-2 col-span-10 md:col-start-3 md:col-span-10 2xl:col-start-4">
-          <div className="inline-flex w-full mb-3 justify-between pr-4">
-            <p className="text-3xl font-bold text-gray-800">Discover</p>
+          <div className="inline-flex w-full mb-0 md:mb-3 justify-between pr-0 md:pr-4">
+            <p className="text-2xl md:text-3xl font-bold text-gray-800">Discover</p>
             <div className="inline-flex">
               <button
                 onClick={(event) => {
@@ -164,7 +164,7 @@ export default function Interests() {
                   });
                 }}
                 className={clsx(
-                  "flex items-center justify-center w-8 h-8 rounded-full border-[1px] mr-2",
+                  "flex items-center justify-center w-8 h-8 rounded-full border-[1px] mr-0 md:mr-2",
                   {
                     "border-primary": showNextBtn,
                     "border-gray-200": !showNextBtn,
