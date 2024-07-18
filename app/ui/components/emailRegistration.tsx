@@ -45,7 +45,7 @@ export function EmailRegistration({border}: { border: boolean }) {
     return (
         <div className="w-full">
             <div className="w-full inline-flex">
-                <div className={clsx('inline-flex rounded-[5px] bg-white items-center h-12 w-full px-4 mr-4', {
+                <div className={clsx('inline-flex rounded-[5px] bg-white items-center h-[3rem] md:h-12 w-full px-4 mr-4', {
                     'border-gray-200 border-[1px]': border,
                     'border-red-500 border-[1px]': error
                 })}>
@@ -56,7 +56,7 @@ export function EmailRegistration({border}: { border: boolean }) {
                         onChange={(event) => validateEmail(event.target.value)}
                     />
                 </div>
-                <button className="text-xs text-white bg-primary rounded-[5px] px-8 inline-flex items-center" onClick={() => joinWaitList()}>
+                <button className="text-xs text-white bg-primary rounded-[5px] px-6 md:px-8 inline-flex items-center" onClick={() => joinWaitList()}>
                     Submit {
                     isJoiningWaitList ? (
                         <div className="ml-2">

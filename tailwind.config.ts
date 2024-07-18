@@ -21,6 +21,13 @@ const config: Config = {
             fontWeight: "500",
           },
         ],
+        "13": [
+          "0.813rem",
+          {
+            lineHeight: "1rem",
+            fontWeight: "500",
+          }
+        ]
       },
     },
   },
