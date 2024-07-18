@@ -100,21 +100,21 @@ export default function Features() {
   return (
     <div className="relative">
       <div className="grid grid-cols-12 gap-4 py-16">
-          <div className="col-start-3 col-span-8 2xl:col-start-4 2xl:col-span-6">
+          <div className="col-start-2 col-span-10 md:col-start-3 md:col-span-8 2xl:col-start-4 2xl:col-span-6">
             <div className="md:w-1/2 mb-6">
-              <p className="text-3xl font-medium text-gray-800 mb-2.5">
+              <p className="text-2xl md:text-3xl font-semibold text-gray-700 mb-2.5">
                 For only <span className="text-primary font-bold">US$1.00</span> a month,
                 you get tour guides, organise experiences and create communities.
               </p>
 
-              <p className="text=16 text-gray-700">
+              <p className="text-13 md:text-16 font-normal text-gray-600">
                 Register as a tour guide and earn by giving people a tour of some
                 of your favorite places. Have an event coming up? Sell your
                 tickets on Oltukai. Have an interest and would like to hang out
                 with like-minded people? Create your community on Oltukai.
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {features.map((feature) => (
                   <div key={feature.title} className="flex flex-col mb-4 gap-x-2">
                     <div
@@ -124,10 +124,10 @@ export default function Features() {
                     </div>
 
                     <div className="flex-col">
-                      <p className="text-gray-800 font-bold text-16 font-medium mb-1">
+                      <p className="text-gray-800 font-bold text-13 md:text-16 font-semibold mb-1">
                         {feature.title}
                       </p>
-                      <p className="text-16 text-gray-700 font-normal">
+                      <p className="text-13 md:text-16 text-gray-700 font-normal">
                         {feature.description}
                       </p>
                     </div>
@@ -137,11 +137,11 @@ export default function Features() {
           </div>
         </div>
       <div className="bg-[#F9FAFB] absolute top-0 bottom-0 left-0 right-0 -z-[1]">
-        <div className="h-full grid grid-cols-6 2xl:grid-cols-12 2xl:col-start-3 divide-x divide-dashed divide-gray-200">
+        <div className="h-full grid grid-cols-12 md:grid-cols-6 2xl:grid-cols-12 2xl:col-start-3 divide-x divide-dashed divide-gray-200">
           <div className="2xl:col-start-3" />
-          <div className="2xl:col-span-2" />
-          <div className="2xl:col-span-2" />
-          <div className="2xl:col-span-2" />
+          <div className="2xl:col-span-2 col-span-3 md:col-span-1" />
+          <div className="2xl:col-span-2 col-span-3 md:col-span-1" />
+          <div className="2xl:col-span-2 col-span-3 md:col-span-1" />
           <div className="2xl:col-span-2" />
         </div>
       </div>
