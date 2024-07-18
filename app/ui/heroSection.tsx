@@ -82,16 +82,16 @@ export default function HeroSection () {
             </div>
           </div>
           <div className="h-full w-full flex flex-col justify-center">
-            <p className="text-3xl mb-2 md:text-7xl text-white font-semibold mb-0 md:mb-6">
+            <p className="text-3xl mb-2 md:text-7xl text-white font-black mb-0 md:mb-4">
               Discover Places,
             </p>
-            <p className="text-3xl mb-2 md:text-7xl text-white font-semibold mb-0 md:mb-6">
+            <p className="text-3xl mb-2 md:text-7xl text-white font-black mb-0 md:mb-4">
               Organise Experiences,
             </p>
-            <p className="text-3xl mb-2 md:text-7xl text-white font-semibold md:mb-6">
+            <p className="text-3xl mb-2 md:text-7xl text-white font-black md:mb-4">
               and Join Communities.
             </p>
-            <p className="text-13 md:text-16 text-white w-full md:w-2/4 mb-4 md:mb-12">
+            <p className="text-13 md:text-16 text-white w-full md:w-2/4 mb-4 md:mb-12 font-normal">
               Oltukai gives you access to unlimited activities such as hiking,
               camping, bike riding, Drives, Sunset watching etc. Access hiking
               places, parks, mountains and all the fun places you love. You can
